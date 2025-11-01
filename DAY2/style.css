@@ -1,0 +1,228 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f1a, #1b002e);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden;
+}
+
+/* Navbar Container */
+nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 1000;
+}
+
+/* Glowing Circle (Left Side Design) */
+nav::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f0c93d, #ffae00);
+  box-shadow: 0 0 20px #ffae00;
+  animation: floatGlow 6s infinite ease-in-out alternate;
+}
+
+/* Navigation Links */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #ffae00;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffae00;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Animation for the glowing circle */
+@keyframes floatGlow {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 0 10px #ffae00, 0 0 30px #ffae00;
+  }
+  100% {
+    transform: translateY(10px);
+    box-shadow: 0 0 20px #ffae00, 0 0 50px #ffae00;
+  }
+}
+
+/* Hamburger Icon - hidden on PC */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ffae00;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate animation when clicked */
+.menu-toggle.active {
+  transform: rotate(90deg);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 25px;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 25px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    width: 200px;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    gap: 15px;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  nav ul.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide the glowing circle for mobile (optional) */
+  nav::before {
+    display: none;
+  }
+}
+
+/* === FINAL POLISH SECTION === */
+
+/* Animate nav appearing */
+nav {
+  animation: fadeInDown 1s ease-out;
+}
+
+/* Animate the nav links when showing on mobile */
+nav ul.show li {
+  animation: slideIn 0.4s ease forwards;
+}
+
+nav ul.show li:nth-child(1) { animation-delay: 0.1s; }
+nav ul.show li:nth-child(2) { animation-delay: 0.2s; }
+nav ul.show li:nth-child(3) { animation-delay: 0.3s; }
+nav ul.show li:nth-child(4) { animation-delay: 0.4s; }
+
+/* Keyframes for nav animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow effect on hover */
+nav a:hover {
+  color: #ffae00;
+  text-shadow: 0 0 5px #ffae00, 0 0 15px #ffae00;
+  transition: all 0.3s ease;
+}
+
+/* Logo subtle entrance effect */
+nav h1 {
+  font-size: 22px;
+  letter-spacing: 1px;
+  background: linear-gradient(45deg, #ffae00, #ff00c3);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 5px #ffae00, 0 0 15px #ff00c3;
+  }
+  to {
+    text-shadow: 0 0 20px #ffae00, 0 0 40px #ff00c3;
+  }
+}
+
+/* Floating glowing background enhancement */
+body::before,
+body::after {
+  opacity: 0.35;
+  filter: blur(140px);
+  animation: floatBlobs 25s infinite alternate ease-in-out;
+}
+
+@keyframes floatBlobs {
+  0% {
+    transform: translate(-80px, -60px) scale(1);
+  }
+  100% {
+    transform: translate(120px, 80px) scale(1.3);
+  }
+}
