@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="clock-container">
+    
+    <!-- Switch for 12H / 24H -->
+    <div class="format-toggle">
+      <label class="switch">
+        <input type="checkbox" id="timeFormatToggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <!-- Header -->
+    <header class="clock-header">
+      <div class="logo"></div>
+      <h1>Digital Clock</h1>
+    </header>
+
+    <!-- Main clock display -->
+    <div id="clock">00:00:00</div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Made by Ifeyemi ❤️</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

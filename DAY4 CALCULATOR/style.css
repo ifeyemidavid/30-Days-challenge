@@ -1,0 +1,73 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Background with gradient */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #7f00ff, #00bfff);
+}
+
+/* Calculator container */
+div {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Title */
+h1 {
+  color: white;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+input {
+  width: 180px;
+  height: 35px;
+  margin: 8px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Buttons */
+button {
+  width: 45px;
+  height: 45px;
+  margin: 10px 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff9500;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #ffa733;
+  transform: scale(1.1);
+}
+
+/* Result */
+#result {
+  margin-top: 20px;
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+}
